@@ -77,7 +77,7 @@ def _batch_generator(data_filename, data_directory, days, batch_size, split, dro
         if split == "test":
             samples_in_file = int(np.ceil(samples_in_file / 2.))
         elif split == "val":
-            batch_start_idx = num_samples - int(np.ceil(samples_in_file / 2.))
+            batch_start_idx = samples_in_file - int(np.ceil(samples_in_file / 2.))
         
         while batch_start_idx < samples_in_file - batch_size:
 
